@@ -1,0 +1,22 @@
+<%= form_with(model: yazar, local: true) do |form| %>
+  <% if yazar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(yazar.errors.count, "error") %> prohibited this yazar from being saved:</h2>
+
+      <ul>
+      <% yazar.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :isim %>
+    <%= form.text_field :isim %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

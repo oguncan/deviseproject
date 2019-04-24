@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Yazars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Isim</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @yazars.each do |yazar| %>
+      <tr>
+        <td><%= yazar.isim %></td>
+        <td><%= link_to 'Show', yazar %></td>
+        <td><%= link_to 'Edit', edit_yazar_path(yazar) %></td>
+        <td><%= link_to 'Destroy', yazar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Yazar', new_yazar_path %>

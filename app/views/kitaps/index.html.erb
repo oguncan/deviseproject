@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Kitaps</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Isim</th>
+      <th>Ozet</th>
+      <th>Resim</th>
+      <th colspan="3"></th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kitaps.each do |kitap| %>
+      <tr>
+        <td><%= kitap.isim %></td>
+        <td><%= kitap.ozet %></td>
+        <td><%= image_tag kitap.resim.url(:thumb) if kitap.resim? %></td>
+        <td><%= link_to 'Show', kitap %></td>
+        <td><%= link_to 'Edit', edit_kitap_path(kitap) %></td>
+        <td><%= link_to 'Destroy', kitap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kitap', new_kitap_path %>

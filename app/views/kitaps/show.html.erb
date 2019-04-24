@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Isim:</strong>
+  <%= @kitap.isim %>
+</p>
+
+<p>
+  <strong>Ozet:</strong>
+  <%= @kitap.ozet %>
+</p>
+<p>
+  <strong>Resim:</strong>
+  <%= image_tag @kitap.resim.url(:medium) if @kitap.resim? %>
+</p>
+
+<%= link_to 'Edit', edit_kitap_path(@kitap) %> |
+<%= link_to 'Back', kitaps_path %>

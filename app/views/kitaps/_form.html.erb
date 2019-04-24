@@ -1,0 +1,30 @@
+<%= form_with(model: kitap, local: true) do |form| %>
+  <% if kitap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kitap.errors.count, "error") %> prohibited this kitap from being saved:</h2>
+
+      <ul>
+      <% kitap.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :isim %>
+    <%= form.text_field :isim %>
+  </div>
+  <div class="field">
+    <%= form.label :resim %>
+    <%= form.file_field :resim %>
+  </div>
+  <div class="field">
+    <%= form.label :ozet %>
+    <%= form.text_area :ozet %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
